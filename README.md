@@ -1,141 +1,180 @@
-# Minigames-Fortnite-Map
-Minigames Fortnite map released in 2023 with over 2 million plays, peaking at 6k concurrent players. Features 40 plus different minigames to play and over 5k lines of code. 
-Trailer` https://www.youtube.com/watch?v=3ygPxVy6p8o
-link to map https://fortnite.gg/island/6066-0594-3952
-other maps https://fortnite.gg/creator/theffa 
-Here’s a polished README you can copy straight into README.md:
+# Multiplayer Minigames — Unreal Engine / UEFN
 
-# UEFN Multiplayer Minigame Collection
+A large-scale multiplayer game built with **Unreal Editor for Fortnite (UEFN)** and **Verse**, featuring more than **40 unique minigames** controlled through a centralized gameplay system.
 
-A large-scale multiplayer Fortnite experience built in **Unreal Editor for Fortnite (UEFN)** using **Verse**.
+The project was released in 2023 and has reached:
 
-The project features a collection of **40+ unique minigames** controlled through a custom Verse game-management system. The system handles round selection, player eliminations, respawning, teams, inventories, teleportation, storms, vehicles, UI messages, persistent statistics, and game-specific win conditions.
+* **2M+ player sessions**
+* **6,000+ peak concurrent players**
+* **40+ multiplayer game modes**
+* **5,000+ lines of gameplay code**
 
+🎥 [Gameplay Trailer](https://www.youtube.com/watch?v=3ygPxVy6p8o)
+🎮 [View Published Game](https://fortnite.gg/island/6066-0594-3952)
+🕹️ [More Published Projects](https://fortnite.gg/creator/theffa)
 
-## Features
+---
 
-- 40+ unique multiplayer minigames
-- Automatic round and game-mode management
-- Custom elimination and respawn systems
-- Free-for-all and team-based modes
-- Dynamic player teleportation
-- Custom spawn management
-- Weapon and inventory granting systems
-- Vehicle-based minigames
-- Dynamic storm controllers
-- Player checkpoint systems
-- Custom HUD messages and game-state feedback
-- Team scoring and win-condition logic
-- Persistent player statistics
-- Randomized game selection
-- Cinematic sequence integration
-- Player state tracking throughout rounds
+## Engineering Overview
+
+The main challenge was building a single multiplayer architecture capable of supporting dozens of completely different game modes without requiring every mode to function as an independent project.
+
+I developed a centralized **Verse game controller** responsible for configuring, starting, managing, and resetting each minigame.
+
+The system coordinates player state, teams, inventories, spawn locations, scoring, win conditions, vehicles, storms, UI, cinematics, and other Unreal/UEFN gameplay devices in real time.
+
+This allowed one published experience to transition dynamically between more than 40 different multiplayer modes.
+
+---
+
+## Core Systems
+
+### Game & Round Management
+
+The central game controller manages the complete lifecycle of each minigame:
+
+* Randomized game selection
+* Round initialization
+* Game-state transitions
+* Player setup and cleanup
+* Win-condition evaluation
+* Round resets
+* Mode-specific device configuration
+
+Each minigame can define its own arena, rules, inventory, teams, movement behavior, storms, vehicles, and victory conditions.
+
+### Player State Management
+
+Player state is tracked throughout the multiplayer session, including:
+
+* Alive / eliminated state
+* Team membership
+* Respawning
+* Eliminations
+* Inventory progression
+* Current game state
+* Win conditions
+* Player-specific statistics
+
+### Persistent Data
+
+The project includes a persistent statistics system that stores player progress between sessions.
+
+Tracked data includes:
+
+* Eliminations
+* Wins
+* Individual minigame victories
+
+Persistence is implemented through Verse persistable classes and player data maps.
+
+### Dynamic Gameplay Systems
+
+The controller integrates a large number of Unreal/UEFN gameplay systems, including:
+
+* Storm controllers
+* Teleporters
+* Item granters
+* Player spawners
+* Vehicles
+* Mutator zones
+* Timers
+* Capture areas
+* Checkpoints
+* Cinematic sequences
+* HUD messages
+* Audio systems
+* Damage volumes
+* Movement modifiers
+* Team and class selectors
+
+These systems are enabled, configured, and reset dynamically depending on the selected game mode.
+
+---
+
+## Technical Concepts
+
+This project demonstrates experience with:
+
+* Event-driven programming
+* Multiplayer game architecture
+* Persistent data
+* Player state management
+* Finite-state game flow
+* Arrays and maps
+* Asynchronous gameplay logic
+* Gameplay event subscriptions
+* Randomized systems
+* Reusable software systems
+* Real-time multiplayer logic
+* UI and gameplay integration
+* Debugging live multiplayer systems
+
+---
 
 ## Technologies
 
-- **Unreal Editor for Fortnite (UEFN)**
-- **Verse**
-- **Unreal Engine**
-- **Fortnite Creative Devices**
+**Project Technologies**
 
-## Verse Systems
+* Unreal Engine / UEFN
+* Verse
+* Unreal gameplay devices
+* Fortnite UI APIs
+* Persistent player data
 
-The project uses a centralized Verse system to manage the different game modes and their associated devices.
+**Broader Unreal Development Experience**
 
-Some of the systems implemented include:
+My Unreal Engine work extends beyond this repository and includes **C++, Verse, and Blueprints** across more than 15 shipped multiplayer products.
 
-### Round Management
+The Verse source in this repository represents the gameplay layer for this specific UEFN project.
 
-The game controller determines which minigame is active, initializes the required devices, prepares players, and resets the previous game state before starting the next round.
+---
 
-### Player Management
+## Scale
 
-The Verse code tracks player state throughout each game, including:
+This project was built as a production multiplayer experience rather than a standalone programming exercise.
 
-- Alive/dead state
-- Team membership
-- Eliminations
-- Respawning
-- Player-specific game state
-- Inventory progression
-- Win conditions
+**Production results:**
 
-### Dynamic Game Modes
+| Metric                  |          Result |
+| ----------------------- | --------------: |
+| Player Sessions         |             2M+ |
+| Peak Concurrent Players |          6,000+ |
+| Minigames               |             40+ |
+| Gameplay Code           |    5,000+ lines |
+| Platform                | Fortnite / UEFN |
 
-Each game mode can enable its own combination of:
+Building for thousands of concurrent users required designing systems that could reliably reset state, handle player joins and eliminations, transition between modes, and coordinate many gameplay devices without breaking the multiplayer session.
 
-- Storm controllers
-- Teleporters
-- Item granters
-- Vehicles
-- Mutator zones
-- Capture areas
-- Checkpoints
-- Cinematic sequences
-- Explosive devices
-- Movement modifiers
-- HUD elements
+---
 
-This allows a single game controller to manage many completely different multiplayer experiences.
+## My Contributions
 
-### Persistent Statistics
+I was responsible for work across both gameplay programming and implementation, including:
 
-The project also includes a persistent player-stat system for tracking values such as:
+* Gameplay architecture
+* Verse programming
+* Multiplayer game logic
+* Round management
+* Persistent player statistics
+* Player state management
+* Team systems
+* Inventory systems
+* Elimination and respawn logic
+* Win-condition systems
+* Device integration
+* HUD and player feedback
+* Gameplay debugging
+* UEFN implementation
+* Live iteration and updates
 
-- Eliminations
-- Wins
-- Games won
+---
 
-## Project Structure
+## Source Code
 
-```text
-UEFN-Minigame-Collection/
-│
-├── README.md
-│
-├── Verse/
-│   └── Games.verse
-│
-└── Images/
-    ├── gameplay-thumbnail.png
-    ├── gameplay-01.png
-    ├── gameplay-02.png
-    └── gameplay-03.png
-Source Code
+The repository contains the primary Verse gameplay implementation used to coordinate the multiplayer experience.
 
-The main Verse game controller can be found here:
+[`Mini.verse`](./Mini.verse)
 
-Verse/Games.verse
+The full published experience also relies on level configuration, Unreal/UEFN assets, Creative devices, UI assets, and other editor-side systems that are not represented by source code alone.
 
-The source demonstrates the gameplay systems and logic used to coordinate the project's minigames.
-
-Highlights
-
-One of the biggest challenges of the project was creating a system capable of managing dozens of game modes without requiring each mode to function as a completely independent project.
-
-The central Verse controller handles transitions between game modes while resetting and configuring the devices required for each round.
-
-This includes managing:
-
-Different spawn locations
-Different player teams
-Different weapons
-Different storm configurations
-Different win conditions
-Different vehicles
-Different arenas
-Different player states
-
-The result is a single Fortnite experience capable of rapidly switching between many different styles of gameplay.
-
-What I Worked On
-Verse gameplay programming
-Game-mode logic
-Multiplayer systems
-Round management
-Player state management
-Team systems
-Elimination and respawn logic
-Device integration
-UI/game-state feedback
-UEFN level and gameplay implementation
