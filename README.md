@@ -2,7 +2,7 @@
 
 A large-scale multiplayer game built with **Unreal Editor for Fortnite (UEFN)** and **Verse**, featuring more than **40 unique minigames** controlled through a centralized gameplay system.
 
-The project was released in 2023 and has reached:
+The project was Built in 2023-2024 and has reached:
 
 * **2M+ player sessions**
 * **6,000+ peak concurrent players**
