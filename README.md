@@ -13,7 +13,7 @@ The project was Built in 2023-2024 and has reached:
 🎮 [View Published Game](https://fortnite.gg/island/6066-0594-3952)
 🕹️ [More Published Projects](https://fortnite.gg/creator/theffa)
 
-collab maps with other studios-
+Collab maps with other studios-
 Caseoh Escape Map-https://youtu.be/K9qFuu0uIM8?is=6FG7uIvAQ01HBtbR
 
 
