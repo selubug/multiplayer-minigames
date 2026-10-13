@@ -1,5 +1,5 @@
 # Multiplayer Minigames — Unreal Engine / UEFN
-
+*No Ai assisted code used in development of game. 
 A large-scale multiplayer game built with **Unreal Editor for Fortnite (UEFN)** and **Verse**, featuring more than **40 unique minigames** controlled through a centralized gameplay system.
 
 The project was Built in 2023-2024 and has reached:
